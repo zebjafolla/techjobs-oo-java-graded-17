@@ -4,8 +4,8 @@ import java.util.Objects;
 
 public class Job {
 
-    private int id;
-    private static int nextId = 1;
+    private Integer id;
+    private static Integer nextId = 1;
 
     private String name;
     private Employer employer;
@@ -23,11 +23,11 @@ public class Job {
 
     public Job(String aName, Employer emp, Location loc, PositionType positionType, CoreCompetency coreCompetency){
         this();
-        this.name = aName ;
-        this.employer = emp;
-        this.location = loc;
-        this.positionType = positionType;
-        this.coreCompetency = coreCompetency;
+        setName(aName);
+        setEmployer(emp);
+        setLocation(loc);
+        setPositionType(positionType);
+        setCoreCompetency(coreCompetency);
 
     }
 
@@ -35,11 +35,16 @@ public class Job {
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        if(name.isEmpty()){
+            this.name = "Data not Available";
+        }
+        else{
+            this.name = name;
+        }
     }
 
     public Employer getEmployer() {
@@ -47,7 +52,12 @@ public class Job {
     }
 
     public void setEmployer(Employer employer) {
-        this.employer = employer;
+        if(employer.toString().isEmpty()){
+            this.employer = new Employer("Data not Available");
+        }
+        else{
+            this.employer = employer;
+        }
     }
 
     public Location getLocation() {
@@ -55,7 +65,13 @@ public class Job {
     }
 
     public void setLocation(Location location) {
-        this.location = location;
+        if(location.toString().isEmpty()){
+            this.location.setValue("Data not Available");
+        }
+        else{
+            this.location = location;
+        }
+
     }
 
     public PositionType getPositionType() {
@@ -63,7 +79,12 @@ public class Job {
     }
 
     public void setPositionType(PositionType positionType) {
-        this.positionType = positionType;
+        if(positionType.toString().isEmpty()){
+            this.positionType.setValue("Data not Available");
+        }
+        else{
+            this.positionType = positionType;
+        }
     }
 
     public CoreCompetency getCoreCompetency() {
@@ -71,10 +92,15 @@ public class Job {
     }
 
     public void setCoreCompetency(CoreCompetency coreCompetency) {
-        this.coreCompetency = coreCompetency;
+        if(coreCompetency.toString().isEmpty()){
+            this.coreCompetency.setValue("Data not Available");
+        }
+        else{
+            this.coreCompetency = coreCompetency;
+        }
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -93,5 +119,17 @@ public class Job {
         return Objects.hashCode(getId());
     }
 
+    @Override
+    public String toString() {
+        return
+                System.lineSeparator() +
+                "ID: " + id + System.lineSeparator() +
+                "Name: " + name + System.lineSeparator() +
+                "Employer: " + employer + System.lineSeparator() +
+                "Location: " + location + System.lineSeparator() +
+                "PositionType: " + positionType + System.lineSeparator() +
+                "CoreCompetency: " + coreCompetency + System.lineSeparator() +
+                System.lineSeparator();
 
+    }
 }

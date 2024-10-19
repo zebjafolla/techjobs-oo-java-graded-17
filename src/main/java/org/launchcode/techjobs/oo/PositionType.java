@@ -2,7 +2,7 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
-public class PositionType {
+public class PositionType extends Job{
 
     private int id;
     private static int nextId = 1;
@@ -40,7 +40,7 @@ public class PositionType {
 
     // Getters and Setters:
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

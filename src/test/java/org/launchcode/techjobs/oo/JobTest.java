@@ -57,13 +57,13 @@ public class JobTest {
         assertTrue(job7.toString().split(":")[1].contains("Name"));
         assertTrue(job7.toString().split(":")[2].contains("Employer"));
         assertTrue(job7.toString().split(":")[3].contains("Location"));
-        assertTrue(job7.toString().split(":")[4].contains("PositionType"));
-        assertTrue(job7.toString().split(":")[5].contains("CoreCompetency"));
+        assertTrue(job7.toString().split(":")[4].contains("Position Type"));
+        assertTrue(job7.toString().split(":")[5].contains("Core Competency"));
     }
 
     @Test //test if a field is empty
     public void testToStringHandlesEmptyField() {
-        Job job8 = new Job("", new Employer("PathMark"), new Location("Philadelphia"), new PositionType("FOH"), new CoreCompetency("Customer Service"));
+        Job job8 = new Job("", new Employer(""), new Location("Philadelphia"), new PositionType("FOH"), new CoreCompetency("Customer Service"));
         if (job8.getId().toString().isBlank()) {
             assertTrue(job8.getId().toString().contains("Data not Available"));
         }

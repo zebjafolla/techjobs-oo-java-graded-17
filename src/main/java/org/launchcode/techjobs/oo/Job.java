@@ -4,8 +4,8 @@ import java.util.Objects;
 
 public class Job {
 
-    private Integer id;
-    private static Integer nextId = 1;
+    private int id;
+    private static int nextId = 1;
 
     private String name;
     private Employer employer;
@@ -66,7 +66,7 @@ public class Job {
 
     public void setLocation(Location location) {
         if(location.toString().isEmpty()){
-            this.location.setValue("Data not Available");
+            this.location = new Location("Data not Available");
         }
         else{
             this.location = location;
@@ -80,7 +80,7 @@ public class Job {
 
     public void setPositionType(PositionType positionType) {
         if(positionType.toString().isEmpty()){
-            this.positionType.setValue("Data not Available");
+            this.positionType = new PositionType("Data not Available");
         }
         else{
             this.positionType = positionType;
@@ -93,7 +93,7 @@ public class Job {
 
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         if(coreCompetency.toString().isEmpty()){
-            this.coreCompetency.setValue("Data not Available");
+            this.coreCompetency = new CoreCompetency("Data not Available");
         }
         else{
             this.coreCompetency = coreCompetency;
@@ -127,9 +127,9 @@ public class Job {
                 "Name: " + name + System.lineSeparator() +
                 "Employer: " + employer + System.lineSeparator() +
                 "Location: " + location + System.lineSeparator() +
-                "PositionType: " + positionType + System.lineSeparator() +
-                "CoreCompetency: " + coreCompetency + System.lineSeparator() +
-                System.lineSeparator();
+                "Position Type: " + positionType + System.lineSeparator() +
+                "Core Competency: " + coreCompetency +
+                        System.lineSeparator();
 
     }
 }

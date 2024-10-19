@@ -2,7 +2,7 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
-public class Location {
+public class Location extends Job {
 
     private int id;
     private static int nextId = 1;
@@ -42,10 +42,6 @@ public class Location {
     }
 
     // Getters and Setters:
-
-    public int getId() {
-        return id;
-    }
 
     public String getValue() {
         return value;

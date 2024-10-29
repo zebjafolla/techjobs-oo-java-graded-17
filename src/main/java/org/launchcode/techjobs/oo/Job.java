@@ -93,7 +93,7 @@ public class Job {
 
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         if(coreCompetency.toString().isEmpty()){
-            this.coreCompetency = new CoreCompetency("Data not Available");
+            this.coreCompetency = new CoreCompetency("Data not available");
         }
         else{
             this.coreCompetency = coreCompetency;

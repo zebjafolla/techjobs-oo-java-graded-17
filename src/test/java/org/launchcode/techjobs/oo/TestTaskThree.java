@@ -1,5 +1,6 @@
 package org.launchcode.techjobs.oo;
 
+import mockit.Expectations;
 import mockit.Mocked;
 import org.junit.Test;
 
@@ -14,8 +15,7 @@ import static org.junit.Assert.*;
  * Created by LaunchCode
  */
 public class TestTaskThree extends AbstractTest {
-    @Mocked
-    Job job;
+    @Mocked Job job;
     @Test
     public void testHasNoArgConstructor() throws ClassNotFoundException {
         Class jobClass = getClassByName("Job");
